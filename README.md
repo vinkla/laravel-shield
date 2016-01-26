@@ -34,7 +34,7 @@ Add the service provider to `config/app.php` in the `providers` array.
 Vinkla\Shield\ShieldServiceProvider::class
 ```
 
-Add the middleware to the `$routeMiddleware` array in your 'Kernal.php' file.
+Add the middleware to the `$routeMiddleware` array in your `Kernel.php` file.
 
 ```php
 protected $routeMiddleware = [
