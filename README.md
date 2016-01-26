@@ -54,7 +54,7 @@ This will create a `config/shield.php` file in your app that you can modify to s
 
 #### HTTP Basic Auth Credentials
 
-The user credentials which are used when logging in with HTTP basic authentication. You may consider adding this to your env file.
+The user credentials which are used when logging in with HTTP basic authentication. You may consider adding these parameters to your environment file.
 
 ## License
 
