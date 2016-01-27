@@ -17,7 +17,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | The user credentials which are used when logging in with HTTP basic
-    | authentication. You may consider adding these to your env file.
+    | authentication. You should consider adding these parameters to your
+    | environment file for security reasons.
     |
     */
 
