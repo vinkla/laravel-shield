@@ -40,9 +40,7 @@ Vinkla\Shield\ShieldServiceProvider::class
 Add the middleware to the `$routeMiddleware` array in your `Kernel.php` file.
 
 ```php
-protected $routeMiddleware = [
-    'shield' => \Vinkla\Shield\ShieldMiddleware::class,
-];
+'shield' => \Vinkla\Shield\ShieldMiddleware::class,
 ```
 
 ## Configuration
