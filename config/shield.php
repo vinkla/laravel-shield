@@ -22,7 +22,8 @@ return [
     |
     */
 
-    'user' => 'your-username',
-    'password' => 'your-password',
+    'users' => [
+        'main' => ['your-username', 'your-password'],
+    ],
 
 ];

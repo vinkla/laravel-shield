@@ -11,6 +11,7 @@
 
 namespace Vinkla\Shield;
 
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
@@ -57,6 +58,34 @@ class ShieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerShield();
+    }
+
+    /**
+     * Register the shield class.
+     *
+     * @return void
+     */
+    protected function registerShield()
+    {
+        $this->app->singleton('shield', function (Container $app) {
+            $config = $app['config']['shield.users'];
+
+            return new Shield($config);
+        });
+
+        $this->app->alias('shield', Shield::class);
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return string[]
+     */
+    public function provides()
+    {
+        return [
+            'shield',
+        ];
     }
 }

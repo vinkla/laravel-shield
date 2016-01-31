@@ -12,6 +12,8 @@
 namespace Vinkla\Tests\Shield;
 
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
+use Vinkla\Shield\Shield;
+use Vinkla\Shield\ShieldMiddleware;
 
 /**
  * This is the service provider test class.
@@ -21,4 +23,14 @@ use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
+
+    public function testShieldIsInjectable()
+    {
+        $this->assertIsInjectable(Shield::class);
+    }
+
+    public function testShieldMiddlewareIsInjectable()
+    {
+        $this->assertIsInjectable(ShieldMiddleware::class);
+    }
 }
