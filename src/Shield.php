@@ -75,7 +75,7 @@ class Shield
      */
     protected function getUsers($user = null)
     {
-        if ($user) {
+        if ($user !== null) {
             return array_only($this->users, $user);
         }
 
