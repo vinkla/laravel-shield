@@ -12,7 +12,10 @@ Route::get('/', ['middleware' => 'shield', function () {
 }]);
 
 // Use it within your controller constructor.
-$this->middleware(BasicAuthMiddleware::class);
+$this->middleware('shield');
+
+// Specify specific user credentials.
+$this->middleware('shield:hasselhoff');
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/shield/master.svg?style=flat)](https://travis-ci.org/vinkla/shield)
@@ -38,7 +41,7 @@ Add the middleware to the `$routeMiddleware` array in your `Kernel.php` file.
 
 ```php
 protected $routeMiddleware = [
-    'shield' => \Vinkla\Shield\BasicAuthMiddleware::class,
+    'shield' => \Vinkla\Shield\ShieldMiddleware::class,
 ];
 ```
 
@@ -54,7 +57,7 @@ This will create a `config/shield.php` file in your app that you can modify to s
 
 #### HTTP Basic Auth Credentials
 
-The user credentials which are used when logging in with HTTP basic authentication. You should consider adding these parameters to your environment file for security reasons.
+The user credentials which are used when logging in with HTTP basic authentication. You can generate new credentials by running the artisan command `shield:generate`.
 
 ## License
 

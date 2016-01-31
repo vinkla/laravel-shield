@@ -16,9 +16,9 @@ return [
     | HTTP Basic Auth Credentials
     |--------------------------------------------------------------------------
     |
-    | The user credentials which are used when logging in with HTTP basic
-    | authentication. You should consider adding these parameters to your
-    | environment file for security reasons.
+    | The user credentials which are used when logging in with HTTP basic 
+    | authentication. You can generate new credentials by running the artisan
+    | command shield:generate.
     |
     */
 
