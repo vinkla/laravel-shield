@@ -1,6 +1,9 @@
 # CHANGELOG
 
-## 1.0.0 (upcoming)
+## 0.2.0 (upcoming)
+
+- Add generator command
+- Use native password hash
 
 ## 0.1.0 (released 2016-01-27)
 
