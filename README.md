@@ -59,6 +59,30 @@ This will create a `config/shield.php` file in your app that you can modify to s
 
 The user credentials which are used when logging in with HTTP basic authentication. You can generate new credentials by running the artisan command `shield:generate`.
 
+## Usage
+
+To protect your routes with the shield you can add it to the routes file.
+```php
+Route::get('/', ['middleware' => 'shield', function () {
+    // Your protected page.
+}]);
+```
+
+You can also add the shield middleware to your controllers constructor.
+```php
+$this->middleware('shield');
+```
+
+The middleware accepts one optional parameter to specify which user credentials to compared with.
+```php
+$this->middleware('shield:david');
+```
+
+To generate new user credentials, please use the command below. Then copy and paste the credentials to the `shield.php` configuration file.
+```bash
+php artisan shield:generate user password
+```
+
 ## License
 
 Laravel Shield is licensed under [The MIT License (MIT)](LICENSE).
