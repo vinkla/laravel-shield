@@ -75,7 +75,7 @@ $this->middleware('shield');
 
 The middleware accepts one optional parameter to specify which user credentials to compared with.
 ```php
-$this->middleware('shield:david');
+$this->middleware('shield:kitt');
 ```
 
 To generate new user credentials, please use the command below. Then copy and paste the credentials to the `shield.php` configuration file.
