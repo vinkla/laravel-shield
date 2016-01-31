@@ -61,8 +61,8 @@ class ShieldMiddlewareTest extends AbstractTestCase
     public function getMiddleware()
     {
         $shield = new Shield([
-            'main' => [password_hash('user1', PASSWORD_DEFAULT), password_hash('password1', PASSWORD_DEFAULT)],
-            'alternative' => [password_hash('user2', PASSWORD_DEFAULT), password_hash('password2', PASSWORD_DEFAULT)],
+            'main' => [password_hash('user1', PASSWORD_BCRYPT), password_hash('password1', PASSWORD_BCRYPT)],
+            'alternative' => [password_hash('user2', PASSWORD_BCRYPT), password_hash('password2', PASSWORD_BCRYPT)],
         ]);
 
         return new ShieldMiddleware($shield);

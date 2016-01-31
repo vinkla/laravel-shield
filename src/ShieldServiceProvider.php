@@ -15,6 +15,7 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
+use Vinkla\Shield\Commands\GenerateCommand;
 
 /**
  * This is the shield service provider class.
@@ -31,6 +32,8 @@ class ShieldServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->setupConfig();
+
+        $this->commands(['command.shield.generate']);
     }
 
     /**
@@ -58,6 +61,7 @@ class ShieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerGenerateCommand();
         $this->registerShield();
     }
 
@@ -78,6 +82,21 @@ class ShieldServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register the generate command class.
+     *
+     * @return void
+     */
+    protected function registerGenerateCommand()
+    {
+        $this->app->singleton('command.shield.generate', function (Container $app) {
+            $config = $app['config'];
+            $filesystem = $app['files'];
+
+            return new GenerateCommand($config, $filesystem);
+        });
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return string[]
@@ -86,6 +105,7 @@ class ShieldServiceProvider extends ServiceProvider
     {
         return [
             'shield',
+            'command.shield.generate',
         ];
     }
 }
