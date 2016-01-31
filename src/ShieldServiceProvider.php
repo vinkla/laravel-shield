@@ -88,11 +88,8 @@ class ShieldServiceProvider extends ServiceProvider
      */
     protected function registerGenerateCommand()
     {
-        $this->app->singleton('command.shield.generate', function (Container $app) {
-            $config = $app['config'];
-            $filesystem = $app['files'];
-
-            return new GenerateCommand($config, $filesystem);
+        $this->app->singleton('command.shield.generate', function () {
+            return new GenerateCommand();
         });
     }
 

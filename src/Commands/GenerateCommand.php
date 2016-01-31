@@ -11,9 +11,8 @@
 
 namespace Vinkla\Shield\Commands;
 
+use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Config\Repository;
-use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;
 
 /**
@@ -35,61 +34,28 @@ class GenerateCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Generate a new basic auth user';
-
-    /**
-     * The config repository instance.
-     *
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
-     * The filesystem instance.
-     *
-     * @var \Illuminate\Filesystem\Filesystem
-     */
-    protected $filesystem;
-
-    /**
-     * Create a new generate command instance.
-     *
-     * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Illuminate\Filesystem\Filesystem $filesystem
-     *
-     * @return void
-     */
-    public function __construct(Repository $config, Filesystem $filesystem)
-    {
-        $this->config = $config;
-        $this->filesystem = $filesystem;
-
-        parent::__construct();
-    }
+    protected $description = 'Generate basic auth user credentials';
 
     /**
      * Execute the console command.
-     *
-     * @throws \RuntimeException
      *
      * @return int
      */
     public function handle()
     {
-        $user = $this->argument('user');
-        $username = password_hash($this->argument('username'), PASSWORD_BCRYPT);
-        $password = password_hash($this->argument('password'), PASSWORD_BCRYPT);
+        try {
+            $user = password_hash($this->argument('user'), PASSWORD_BCRYPT);
+            $password = password_hash($this->argument('password'), PASSWORD_BCRYPT);
 
-        $this->save($user, $username, $password);
+            $this->info(sprintf('User: %s', $user));
+            $this->info(sprintf('Password: %s', $password));
 
-        $this->info("The user $user was successfully created!");
+            return 0;
+        } catch (Exception $e) {
+            $this->error($e->getMessage());
 
-        return 0;
-    }
-
-    protected function save($user, $username, $password)
-    {
-        dd($this->filesystem->get());
+            return 1;
+        }
     }
 
     /**
@@ -100,8 +66,7 @@ class GenerateCommand extends Command
     protected function getArguments()
     {
         return [
-            ['user', InputArgument::REQUIRED, 'The name of the user'],
-            ['username', InputArgument::REQUIRED, 'The hashed username'],
+            ['user', InputArgument::REQUIRED, 'The hashed user'],
             ['password', InputArgument::REQUIRED, 'The hashed password'],
         ];
     }

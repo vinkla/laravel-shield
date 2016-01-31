@@ -11,7 +11,6 @@
 
 namespace Vinkla\Tests\Shield\Commands;
 
-use Mockery;
 use Vinkla\Tests\Shield\AbstractTestCase;
 
 /**
@@ -21,13 +20,25 @@ use Vinkla\Tests\Shield\AbstractTestCase;
  */
 class GenerateCommandTest extends AbstractTestCase
 {
-    public function testGenerate()
+    public function testStandard()
     {
-        $this->artisan('shield:generate', [
-            'user' => 'test',
-            'username' => 'user1',
-            'password' => 'password1',
-        ]);
+        $return = $this->artisan('shield:generate', ['user' => 'user1', 'password' => 'password1']);
+        $this->assertSame(0, $return);
+    }
 
+    /**
+     * @expectedException \Symfony\Component\Console\Exception\RuntimeException
+     */
+    public function testWithoutUser()
+    {
+        $this->artisan('shield:generate', ['password' => 'password1']);
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Console\Exception\RuntimeException
+     */
+    public function testWithoutPassword()
+    {
+        $this->artisan('shield:generate', ['user' => 'user1']);
     }
 }
