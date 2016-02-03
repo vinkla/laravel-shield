@@ -3,7 +3,7 @@ Laravel Shield
 
 ![shield](https://cloud.githubusercontent.com/assets/499192/12594651/68d05fee-c477-11e5-9bd2-9a5df5fbc13b.png)
 
-Shield is a HTTP basic auth middleware for Laravel and Lumen. No database required, instead we put the user credentials within the environment file.
+Shield is a HTTP basic auth middleware for Laravel and Lumen. No database required, instead we put the user credentials within the configuration file.
 
 ```php
 // Use on your routes.
