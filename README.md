@@ -14,7 +14,7 @@ Route::get('/', ['middleware' => 'shield', function () {
 // Use it within your controller constructor.
 $this->middleware('shield');
 
-// Specify specific user credentials.
+// Use specific user credentials.
 $this->middleware('shield:hasselhoff');
 ```
 
