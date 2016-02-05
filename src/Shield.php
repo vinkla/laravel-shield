@@ -55,10 +55,10 @@ class Shield
         $users = $this->getUsers($user);
 
         foreach ($users as $credentials) {
-            $username = password_verify($username, reset($credentials));
-            $password = password_verify($password, end($credentials));
-
-            if ($username && $password) {
+            if (
+                password_verify($username, reset($credentials)) &&
+                password_verify($password, end($credentials))
+            ) {
                 return;
             }
         }

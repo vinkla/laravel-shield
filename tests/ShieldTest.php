@@ -25,6 +25,7 @@ class ShieldTest extends AbstractTestCase
     {
         $shield = $this->getShield();
         $this->assertNull($shield->validate('user1', 'password1'));
+        $this->assertNull($shield->validate('user2', 'password2'));
     }
 
     public function testValidateWithUser()
