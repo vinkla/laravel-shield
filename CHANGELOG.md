@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.1 (released 2016-02-05)
+
+- Fix multiple users bug
+
 ## 0.2.0 (released 2016-01-31)
 
 - Add generator command
