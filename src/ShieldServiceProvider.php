@@ -15,7 +15,7 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
-use Vinkla\Shield\Commands\GenerateCommand;
+use Vinkla\Shield\Commands\HashCommand;
 
 /**
  * This is the shield service provider class.
@@ -33,7 +33,7 @@ class ShieldServiceProvider extends ServiceProvider
     {
         $this->setupConfig();
 
-        $this->commands(['command.shield.generate']);
+        $this->commands(['command.shield.hash']);
     }
 
     /**
@@ -61,7 +61,7 @@ class ShieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerGenerateCommand();
+        $this->registerHashCommand();
         $this->registerShield();
     }
 
@@ -82,14 +82,14 @@ class ShieldServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the generate command class.
+     * Register the hash command class.
      *
      * @return void
      */
-    protected function registerGenerateCommand()
+    protected function registerHashCommand()
     {
-        $this->app->singleton('command.shield.generate', function () {
-            return new GenerateCommand();
+        $this->app->singleton('command.shield.hash', function () {
+            return new HashCommand();
         });
     }
 
@@ -102,7 +102,7 @@ class ShieldServiceProvider extends ServiceProvider
     {
         return [
             'shield',
-            'command.shield.generate',
+            'command.shield.hash',
         ];
     }
 }

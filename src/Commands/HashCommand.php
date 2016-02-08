@@ -16,25 +16,25 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 
 /**
- * This is the generate command class.
+ * This is the hash command class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
-class GenerateCommand extends Command
+class HashCommand extends Command
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'shield:generate';
+    protected $name = 'shield:hash';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate basic auth user credentials';
+    protected $description = 'Hash basic auth user credentials';
 
     /**
      * Execute the console command.
@@ -44,11 +44,11 @@ class GenerateCommand extends Command
     public function handle()
     {
         try {
-            $user = password_hash($this->argument('user'), PASSWORD_BCRYPT);
-            $password = password_hash($this->argument('password'), PASSWORD_BCRYPT);
+            $credentials = $this->argument('credentials');
 
-            $this->info(sprintf('User: %s', $user));
-            $this->info(sprintf('Password: %s', $password));
+            foreach (explode(' ', $credentials) as $credential) {
+                $this->info(password_hash($credential, PASSWORD_BCRYPT));
+            }
 
             return 0;
         } catch (Exception $e) {
@@ -66,8 +66,7 @@ class GenerateCommand extends Command
     protected function getArguments()
     {
         return [
-            ['user', InputArgument::REQUIRED, 'The hashed user'],
-            ['password', InputArgument::REQUIRED, 'The hashed password'],
+            ['credentials', InputArgument::IS_ARRAY | InputArgument::REQUIRED, 'The user credentials (separate with space)'],
         ];
     }
 }

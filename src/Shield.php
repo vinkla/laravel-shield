@@ -40,7 +40,7 @@ class Shield
     }
 
     /**
-     * Verify the user input
+     * Verify the user input.
      *
      * @param string $username
      * @param string $password

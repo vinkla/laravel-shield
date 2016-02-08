@@ -14,31 +14,23 @@ namespace Vinkla\Tests\Shield\Commands;
 use Vinkla\Tests\Shield\AbstractTestCase;
 
 /**
- * This is the generate command test class.
+ * This is the hash command test class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
-class GenerateCommandTest extends AbstractTestCase
+class HashCommandTest extends AbstractTestCase
 {
     public function testStandard()
     {
-        $return = $this->artisan('shield:generate', ['user' => 'user1', 'password' => 'password1']);
+        $return = $this->artisan('shield:hash', ['credentials' => 'hash1 hash2']);
         $this->assertSame(0, $return);
     }
 
     /**
      * @expectedException \Symfony\Component\Console\Exception\RuntimeException
      */
-    public function testWithoutUser()
+    public function testWithoutCredentials()
     {
-        $this->artisan('shield:generate', ['password' => 'password1']);
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Console\Exception\RuntimeException
-     */
-    public function testWithoutPassword()
-    {
-        $this->artisan('shield:generate', ['user' => 'user1']);
+        $this->artisan('shield:hash', []);
     }
 }
