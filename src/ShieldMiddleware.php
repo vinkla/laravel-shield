@@ -53,7 +53,7 @@ class ShieldMiddleware
     public function handle($request, Closure $next, $user = null)
     {
         try {
-            $this->shield->validate($request->getUser(), $request->getPassword(), $user);
+            $this->shield->verify($request->getUser(), $request->getPassword(), $user);
         } catch (UnauthorizedShieldException $e) {
             throw new UnauthorizedHttpException('Basic');
         }

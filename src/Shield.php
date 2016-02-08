@@ -40,7 +40,7 @@ class Shield
     }
 
     /**
-     * Validate the incoming request.
+     * Verify the user input
      *
      * @param string $username
      * @param string $password
@@ -50,7 +50,7 @@ class Shield
      *
      * @return null|void
      */
-    public function validate($username, $password, $user = null)
+    public function verify($username, $password, $user = null)
     {
         $users = $this->getUsers($user);
 

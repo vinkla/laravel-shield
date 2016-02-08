@@ -21,17 +21,17 @@ use Vinkla\Shield\Shield;
  */
 class ShieldTest extends AbstractTestCase
 {
-    public function testValidate()
+    public function testVerify()
     {
         $shield = $this->getShield();
-        $this->assertNull($shield->validate('user1', 'password1'));
-        $this->assertNull($shield->validate('user2', 'password2'));
+        $this->assertNull($shield->verify('user1', 'password1'));
+        $this->assertNull($shield->verify('user2', 'password2'));
     }
 
-    public function testValidateWithUser()
+    public function testVerifyWithUser()
     {
         $shield = $this->getShield();
-        $this->assertNull($shield->validate('user1', 'password1', 'main'));
+        $this->assertNull($shield->verify('user1', 'password1', 'main'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ShieldTest extends AbstractTestCase
     public function testUnauthorizedShieldException()
     {
         $shield = $this->getShield();
-        $shield->validate('user3', 'password3');
+        $shield->verify('user3', 'password3');
     }
 
     /**
@@ -49,7 +49,7 @@ class ShieldTest extends AbstractTestCase
     public function testUnauthorizedShieldExceptionWithUser()
     {
         $shield = $this->getShield();
-        $shield->validate('user1', 'password1', 'alternative');
+        $shield->verify('user1', 'password1', 'alternative');
     }
 
     public function testGetUsers()
