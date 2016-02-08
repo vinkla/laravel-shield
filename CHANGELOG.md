@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.3.0 (upcoming)
+
+- Replace generate command with hash command
+- Rename validate to verify
+
 ## 0.2.1 (released 2016-02-05)
 
 - Fix multiple users bug
