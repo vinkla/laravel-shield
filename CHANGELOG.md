@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.3.0 (upcoming)
+## 0.3.0 (released 2016-02-09)
 
 - Replace generate command with hash command
 - Rename validate to verify
