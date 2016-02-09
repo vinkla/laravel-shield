@@ -55,7 +55,7 @@ This will create a `config/shield.php` file in your app that you can modify to s
 
 #### HTTP Basic Auth Credentials
 
-The user credentials which are used when logging in with HTTP basic authentication. You can generate new credentials by running the artisan command `shield:generate`.
+The user credentials which are used when logging in with HTTP basic authentication. You can hash new user credentials by running the artisan command `shield:hash`.
 
 ## Usage
 
@@ -76,9 +76,9 @@ The middleware accepts one optional parameter to specify which user credentials 
 $this->middleware('shield:kitt');
 ```
 
-To generate new user credentials, please use the command below. Then copy and paste the credentials to the `shield.php` configuration file.
+To hash new user credentials, please use the command below. Then copy and paste the credentials to the `shield.php` configuration file. The command expects an array of items (separated with spaces).
 ```bash
-php artisan shield:generate user password
+php artisan shield:hash david hasselhoff sharknado theroom
 ```
 
 ## License

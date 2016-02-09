@@ -16,9 +16,9 @@ return [
     | HTTP Basic Auth Credentials
     |--------------------------------------------------------------------------
     |
-    | The user credentials which are used when logging in with HTTP basic 
-    | authentication. You can generate new credentials by running the artisan
-    | command shield:generate.
+    | The user credentials which are used when logging in with HTTP basic
+    | authentication. You can hash new user credentials by running the artisan
+    | command shield:hash.
     |
     */
 
