@@ -46,7 +46,7 @@ class HashCommand extends Command
         try {
             $credentials = $this->argument('credentials');
 
-            foreach (explode(' ', $credentials) as $credential) {
+            foreach ($credentials as $credential) {
                 $this->info(password_hash($credential, PASSWORD_BCRYPT));
             }
 

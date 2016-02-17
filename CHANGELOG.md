@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.1 (released 2016-02-17)
+
+- Fix hash command bug
+
 ## 0.3.0 (released 2016-02-09)
 
 - Replace generate command with hash command
