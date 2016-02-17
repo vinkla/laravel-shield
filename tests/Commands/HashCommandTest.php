@@ -22,7 +22,7 @@ class HashCommandTest extends AbstractTestCase
 {
     public function testStandard()
     {
-        $return = $this->artisan('shield:hash', ['credentials' => 'hash1 hash2']);
+        $return = $this->artisan('shield:hash', ['credentials' => ['hash1', 'hash2']]);
         $this->assertSame(0, $return);
     }
 
