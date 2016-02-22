@@ -28,6 +28,13 @@ class Shield
     protected $users;
 
     /**
+     * The authenticated user.
+     *
+     * @var string
+     */
+    protected $currentUser;
+
+    /**
      * Create a new shield instance.
      *
      * @param array $users
@@ -54,11 +61,13 @@ class Shield
     {
         $users = $this->getUsers($user);
 
-        foreach ($users as $credentials) {
+        foreach ($users as $user => $credentials) {
             if (
                 password_verify($username, reset($credentials)) &&
                 password_verify($password, end($credentials))
             ) {
+                $this->currentUser = $user;
+
                 return;
             }
         }
@@ -80,5 +89,15 @@ class Shield
         }
 
         return $this->users;
+    }
+
+    /**
+     * Get the current authenticated use.
+     *
+     * @return array $currentUser attribute
+     */
+    public function getCurrentUser()
+    {
+        return $this->currentUser;
     }
 }
