@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.2 (released 2016-02-23)
+
+- Add get current user method
+
 ## 0.3.1 (released 2016-02-17)
 
 - Fix hash command bug
