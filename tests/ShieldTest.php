@@ -34,6 +34,17 @@ class ShieldTest extends AbstractTestCase
         $this->assertNull($shield->verify('user1', 'password1', 'main'));
     }
 
+    public function testGetCurrentUser()
+    {
+        $shield = $this->getShield();
+
+        $this->assertNull($shield->verify('user1', 'password1'));
+        $this->assertEquals('main', $shield->getCurrentUser());
+
+        $this->assertNull($shield->verify('user2', 'password2'));
+        $this->assertEquals('alternative', $shield->getCurrentUser());
+    }
+
     /**
      * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedShieldException
      */
