@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.0 (released 2016-04-01)
+
+- First stable version
+
 ## 0.3.2 (released 2016-02-23)
 
 - Add get current user method
