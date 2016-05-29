@@ -26,7 +26,9 @@ class ShieldMiddlewareTest extends AbstractTestCase
     {
         $request = $this->getRequest(['PHP_AUTH_USER' => 'user1', 'PHP_AUTH_PW' => 'password1']);
         $middleware = $this->getMiddleware();
-        $return = $middleware->handle($request, function () { });
+        $return = $middleware->handle($request, function () {
+            //
+        });
         $this->assertNull($return);
     }
 
