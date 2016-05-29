@@ -19,6 +19,7 @@ $this->middleware('shield:hasselhoff');
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/shield/master.svg?style=flat)](https://travis-ci.org/vinkla/shield)
+[![StyleCI](https://styleci.io/repos/50459201/shield?style=flat)](https://styleci.io/repos/50459201)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/vinkla/shield.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/shield/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/vinkla/shield.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/shield)
 [![Latest Version](https://img.shields.io/github/release/vinkla/shield.svg?style=flat)](https://github.com/vinkla/shield/releases)
