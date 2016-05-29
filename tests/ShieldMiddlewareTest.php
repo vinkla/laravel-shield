@@ -34,7 +34,9 @@ class ShieldMiddlewareTest extends AbstractTestCase
     {
         $request = $this->getRequest(['PHP_AUTH_USER' => 'user2', 'PHP_AUTH_PW' => 'password2']);
         $middleware = $this->getMiddleware();
-        $return = $middleware->handle($request, function () { }, 'alternative');
+        $return = $middleware->handle($request, function () {
+            //
+        }, 'alternative');
         $this->assertNull($return);
     }
 
@@ -45,7 +47,9 @@ class ShieldMiddlewareTest extends AbstractTestCase
     {
         $request = $this->getRequest(['PHP_AUTH_USER' => 'user3', 'PHP_AUTH_PW' => 'password3']);
         $middleware = $this->getMiddleware();
-        $middleware->handle($request, function () { });
+        $middleware->handle($request, function () {
+            //
+        });
     }
 
     /**
@@ -55,7 +59,9 @@ class ShieldMiddlewareTest extends AbstractTestCase
     {
         $request = $this->getRequest(['PHP_AUTH_USER' => 'user1', 'PHP_AUTH_PW' => 'password1']);
         $middleware = $this->getMiddleware();
-        $middleware->handle($request, function () { }, 'alternative');
+        $middleware->handle($request, function () {
+            //
+        }, 'alternative');
     }
 
     public function getMiddleware()
