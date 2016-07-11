@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.2.0 (upcoming)
+## 1.2.0 (released 2016-07-11)
 
 - Dropped php 5.5 support
 
