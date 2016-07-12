@@ -27,7 +27,7 @@ class ShieldMiddleware
      *
      * @var \Vinkla\Shield\Shield
      */
-    private $shield;
+    protected $shield;
 
     /**
      * Create a new shield middleware class.
