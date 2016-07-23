@@ -18,7 +18,7 @@ $this->middleware('shield');
 $this->middleware('shield:hasselhoff');
 ```
 
-[![Build Status](https://img.shields.io/travis/vinkla/shield/master.svg?style=flat)](https://travis-ci.org/vinkla/shield)
+[![Build Status](https://img.shields.io/travis/vinkla/laravel-shield/master.svg?style=flat)](https://travis-ci.org/vinkla/laravel-shield)
 [![StyleCI](https://styleci.io/repos/50459201/shield?style=flat)](https://styleci.io/repos/50459201)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/vinkla/shield.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/shield/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/vinkla/shield.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/shield)
