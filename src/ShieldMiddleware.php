@@ -33,6 +33,8 @@ class ShieldMiddleware
      * Create a new shield middleware class.
      *
      * @param \Vinkla\Shield\Shield $shield
+     *
+     * @return void
      */
     public function __construct(Shield $shield)
     {
