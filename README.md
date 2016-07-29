@@ -79,8 +79,7 @@ $this->middleware('shield:kitt');
 
 To hash new user credentials, please use the command below. Then copy and paste the credentials to the `shield.php` configuration file. The command expects an array of items (separated with spaces).
 ```bash
-php artisan shield:hash david hasselhoff sharknado theroom
-```
+php artisan shield:hash david hasselhoff
 
 ## License
 
