@@ -77,9 +77,15 @@ The middleware accepts one optional parameter to specify which user credentials 
 $this->middleware('shield:kitt');
 ```
 
-To hash new user credentials, please use the command below. Then copy and paste the credentials to the `shield.php` configuration file. The command expects an array of items (separated with spaces).
+To hash new user credentials, please use the command below. The command expects an array of items (separated with spaces).
 ```bash
 php artisan shield:hash david hasselhoff
+```
+
+Then copy and paste the credentials to the `.env` file separating the hashed username and password with a colon.
+```bash
+SHIELD_USER=hashed_username:hashed_password
+```
 
 ## License
 
