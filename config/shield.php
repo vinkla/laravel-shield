@@ -23,7 +23,7 @@ return [
     */
 
     'users' => [
-        'main' => empty(env('SHIELD_USER')) ? null : explode(':', str_replace(' ', '', env('SHIELD_USER'))),
+        'main' => [env('SHIELD_USER'), env('SHIELD_PASSWORD')],
     ],
 
 ];

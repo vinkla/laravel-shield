@@ -84,7 +84,8 @@ php artisan shield:hash david hasselhoff
 
 Then copy and paste the credentials to the `.env` file separating the hashed username and password with a colon.
 ```bash
-SHIELD_USER=hashed_username:hashed_password
+SHIELD_USER=your-hashed-user
+SHIELD_PASSWORD=your-hashed-password
 ```
 
 ## License
