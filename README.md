@@ -1,9 +1,8 @@
-Laravel Shield
-==============
+# Laravel Shield
 
 ![shield](https://cloud.githubusercontent.com/assets/499192/12594651/68d05fee-c477-11e5-9bd2-9a5df5fbc13b.png)
 
-Shield is a HTTP basic auth middleware for Laravel and Lumen. No database required, instead we put the user credentials within the configuration file.
+> A HTTP basic auth middleware for Laravel.
 
 ```php
 // Use on your routes.
@@ -20,12 +19,12 @@ $this->middleware('shield:hasselhoff');
 
 [![Build Status](https://img.shields.io/travis/vinkla/laravel-shield/master.svg?style=flat)](https://travis-ci.org/vinkla/laravel-shield)
 [![StyleCI](https://styleci.io/repos/50459201/shield?style=flat)](https://styleci.io/repos/50459201)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/vinkla/shield.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/shield/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/vinkla/shield.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/shield)
+[![Coverage Status](https://img.shields.io/codecov/c/github/vinkla/laravel-alert.svg?style=flat)](https://codecov.io/github/vinkla/laravel-alert)
 [![Latest Version](https://img.shields.io/github/release/vinkla/shield.svg?style=flat)](https://github.com/vinkla/shield/releases)
 [![License](https://img.shields.io/packagist/l/vinkla/shield.svg?style=flat)](https://packagist.org/packages/vinkla/shield)
 
 ## Installation
+
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ```bash
@@ -90,4 +89,4 @@ SHIELD_PASSWORD=your-hashed-password
 
 ## License
 
-Laravel Shield is licensed under [The MIT License (MIT)](LICENSE).
+[MIT](LICENSE) © [Vincent Klaiber](https://vinkla.com)
