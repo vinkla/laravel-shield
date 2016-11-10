@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Vinkla\Shield;
 
 use Vinkla\Shield\Exceptions\UnauthorizedShieldException;
@@ -55,9 +57,9 @@ class Shield
      *
      * @throws \Vinkla\Shield\Exceptions\UnauthorizedShieldException
      *
-     * @return null|void
+     * @return null
      */
-    public function verify($username, $password, $user = null)
+    public function verify(string $username, string $password, string $user = null)
     {
         $users = $this->getUsers($user);
 
@@ -82,10 +84,10 @@ class Shield
      *
      * @return array
      */
-    protected function getUsers($user = null)
+    protected function getUsers(string $user = null): array
     {
         if ($user !== null) {
-            return array_only($this->users, $user);
+            return array_intersect_key($this->users, array_flip((array) $user));
         }
 
         return $this->users;
@@ -94,9 +96,9 @@ class Shield
     /**
      * Get the current authenticated use.
      *
-     * @return array $currentUser attribute
+     * @return string
      */
-    public function getCurrentUser()
+    public function getCurrentUser(): string
     {
         return $this->currentUser;
     }

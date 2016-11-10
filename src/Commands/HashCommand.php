@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Vinkla\Shield\Commands;
 
 use Exception;
@@ -41,7 +43,7 @@ class HashCommand extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(): int
     {
         try {
             $credentials = $this->argument('credentials');
@@ -63,7 +65,7 @@ class HashCommand extends Command
      *
      * @return array
      */
-    protected function getArguments()
+    protected function getArguments(): array
     {
         return [
             ['credentials', InputArgument::IS_ARRAY | InputArgument::REQUIRED, 'The user credentials (separate with space)'],

@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Vinkla\Shield;
 
 use Closure;
@@ -52,7 +54,7 @@ class ShieldMiddleware
      *
      * @return mixed
      */
-    public function handle($request, Closure $next, $user = null)
+    public function handle($request, Closure $next, string $user = null)
     {
         try {
             $this->shield->verify($request->getUser(), $request->getPassword(), $user);
