@@ -2,7 +2,7 @@
 
 ![shield](https://cloud.githubusercontent.com/assets/499192/12594651/68d05fee-c477-11e5-9bd2-9a5df5fbc13b.png)
 
-> A HTTP basic auth middleware for Laravel.
+> A [HTTP basic auth](https://en.m.wikipedia.org/wiki/Basic_access_authentication) middleware for Laravel.
 
 ```php
 // Use on your routes.
