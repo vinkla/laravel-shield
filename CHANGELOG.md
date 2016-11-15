@@ -2,9 +2,10 @@
 
 ## 2.0.0 (upcoming)
 
-- Dropped php 5.6 support
 - Dropped laravel 5.2 support
-- Update the exception.
+- Dropped php 5.6 support
+- Removed the exception
+- Removed the hash command
 
 ## 1.2.0 (released 2016-07-11)
 
