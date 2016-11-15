@@ -24,7 +24,7 @@ return [
     'users' => [
         'main' => [
             env('SHIELD_USER'),
-            env('SHIELD_PASSWORD')
+            env('SHIELD_PASSWORD'),
         ],
     ],
 
