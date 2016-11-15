@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Vinkla\Shield;
 
-use Vinkla\Shield\Exceptions\UnauthorizedException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /**
  * This is the shield class.
@@ -55,7 +55,7 @@ class Shield
      * @param string $password
      * @param string|null $user
      *
-     * @throws \Vinkla\Shield\Exceptions\UnauthorizedException
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      *
      * @return null
      */
@@ -74,7 +74,7 @@ class Shield
             }
         }
 
-        throw new UnauthorizedException();
+        throw new UnauthorizedHttpException('Basic');
     }
 
     /**

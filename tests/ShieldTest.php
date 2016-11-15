@@ -48,7 +48,7 @@ class ShieldTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedException
+     * @expectedException \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      */
     public function testUnauthorizedException()
     {
@@ -57,7 +57,7 @@ class ShieldTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedException
+     * @expectedException \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      */
     public function testUnauthorizedExceptionWithUser()
     {

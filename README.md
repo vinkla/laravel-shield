@@ -55,11 +55,12 @@ This will create a `config/shield.php` file in your app that you can modify to s
 
 #### HTTP Basic Auth Credentials
 
-The user credentials which are used when logging in with HTTP basic authentication. You can hash new user credentials by running the artisan command `shield:hash`.
+The user credentials which are used when logging in with [HTTP basic authentication](https://en.m.wikipedia.org/wiki/Basic_access_authentication).
 
 ## Usage
 
 To protect your routes with the shield you can add it to the routes file.
+
 ```php
 Route::get('/', ['middleware' => 'shield', function () {
     // Your protected page.
@@ -67,21 +68,21 @@ Route::get('/', ['middleware' => 'shield', function () {
 ```
 
 You can also add the shield middleware to your controllers constructor.
+
 ```php
 $this->middleware('shield');
 ```
 
 The middleware accepts one optional parameter to specify which user credentials to compared with.
+
 ```php
 $this->middleware('shield:kitt');
 ```
 
-To hash new user credentials, please use the command below. The command expects an array of items (separated with spaces).
-```bash
-php artisan shield:hash david hasselhoff
-```
+To add new user credentials, you probably want to use hashed passwords. Hashed password can be generated with [`htpasswd`](https://tldr.ostera.io/htpasswd) command line tool or [`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) PHP function.
 
 Then copy and paste the credentials to the `.env` file separating the hashed username and password with a colon.
+
 ```bash
 SHIELD_USER=your-hashed-user
 SHIELD_PASSWORD=your-hashed-password

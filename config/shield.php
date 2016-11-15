@@ -17,13 +17,15 @@ return [
     |--------------------------------------------------------------------------
     |
     | The user credentials which are used when logging in with HTTP basic
-    | authentication. You can hash new user credentials by running the artisan
-    | command shield:hash.
+    | authentication.
     |
     */
 
     'users' => [
-        'main' => [env('SHIELD_USER'), env('SHIELD_PASSWORD')],
+        'main' => [
+            env('SHIELD_USER'),
+            env('SHIELD_PASSWORD')
+        ],
     ],
 
 ];
