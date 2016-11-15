@@ -48,18 +48,18 @@ class ShieldTest extends AbstractTestCase
     }
 
     /**
-     * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedShieldException
+     * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedException
      */
-    public function testUnauthorizedShieldException()
+    public function testUnauthorizedException()
     {
         $shield = $this->getShield();
         $shield->verify('user3', 'password3');
     }
 
     /**
-     * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedShieldException
+     * @expectedException \Vinkla\Shield\Exceptions\UnauthorizedException
      */
-    public function testUnauthorizedShieldExceptionWithUser()
+    public function testUnauthorizedExceptionWithUser()
     {
         $shield = $this->getShield();
         $shield->verify('user1', 'password1', 'alternative');

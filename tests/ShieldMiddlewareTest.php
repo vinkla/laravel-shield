@@ -15,6 +15,7 @@ namespace Vinkla\Tests\Shield;
 
 use Illuminate\Http\Request;
 use Vinkla\Shield\Shield;
+use Vinkla\Tests\Shield\AbstractTestCase;
 use Vinkla\Shield\ShieldMiddleware;
 
 /**

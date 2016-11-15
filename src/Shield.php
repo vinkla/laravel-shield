@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Vinkla\Shield;
 
-use Vinkla\Shield\Exceptions\UnauthorizedShieldException;
+use Vinkla\Shield\Exceptions\UnauthorizedException;
 
 /**
  * This is the shield class.
@@ -55,7 +55,7 @@ class Shield
      * @param string $password
      * @param string|null $user
      *
-     * @throws \Vinkla\Shield\Exceptions\UnauthorizedShieldException
+     * @throws \Vinkla\Shield\Exceptions\UnauthorizedException
      *
      * @return null
      */
@@ -74,7 +74,7 @@ class Shield
             }
         }
 
-        throw new UnauthorizedShieldException();
+        throw new UnauthorizedException();
     }
 
     /**

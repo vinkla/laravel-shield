@@ -15,7 +15,7 @@ namespace Vinkla\Shield;
 
 use Closure;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use Vinkla\Shield\Exceptions\UnauthorizedShieldException;
+use Vinkla\Shield\Exceptions\UnauthorizedException;
 
 /**
  * This is the shield middleware class.
@@ -58,7 +58,7 @@ class ShieldMiddleware
     {
         try {
             $this->shield->verify($request->getUser(), $request->getPassword(), $user);
-        } catch (UnauthorizedShieldException $e) {
+        } catch (UnauthorizedException $e) {
             throw new UnauthorizedHttpException('Basic');
         }
 

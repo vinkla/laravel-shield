@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Vinkla\Shield\Exceptions;
 
-use Exception;
+use RuntimeException;
 
 /**
- * This is the unauthorized shield exception class.
+ * This is the unauthorized exception class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
-class UnauthorizedShieldException extends Exception implements ShieldExceptionInterface
+class UnauthorizedException extends RuntimeException implements ShieldExceptionInterface
 {
     //
 }

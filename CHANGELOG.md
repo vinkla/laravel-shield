@@ -1,9 +1,10 @@
 # CHANGELOG
 
-## 1.3.0 (released 2016-11-10)
+## 2.0.0 (upcoming)
 
 - Dropped php 5.6 support
 - Dropped laravel 5.2 support
+- Update the exception.
 
 ## 1.2.0 (released 2016-07-11)
 
