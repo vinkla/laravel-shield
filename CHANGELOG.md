@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.0.0 (upcoming)
+## 2.0.0 (released 2016-11-17)
 
 - Dropped laravel 5.2 support
 - Dropped php 5.6 support
