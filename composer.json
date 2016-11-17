@@ -13,7 +13,7 @@
     "require": {
         "php": "^7.0",
         "illuminate/support": "5.3.*",
-        "symfony/http-kernel": "3.1.*"
+        "symfony/http-kernel": "^3.1"
     },
     "require-dev": {
         "graham-campbell/testbench": "^3.2",
