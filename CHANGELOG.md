@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.1.0 (released 2017-01-01)
+
+- Added laravel 5.4 support
+
 ## 2.0.0 (released 2016-11-17)
 
 - Dropped laravel 5.2 support
