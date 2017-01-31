@@ -52,7 +52,7 @@ class ShieldMiddleware
      */
     public function handle($request, Closure $next, string $user = null)
     {
-        $this->shield->verify($request->getUser(), $request->getPassword(), $user);
+        $this->shield->verify($request->getUser() ?: '', $request->getPassword() ?: '', $user);
 
         return $next($request);
     }
