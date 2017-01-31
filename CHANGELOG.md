@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.1.1 (released 2017-01-31)
+
+- Fix support for nullable credentials
+
 ## 2.1.0 (released 2017-01-01)
 
 - Added laravel 5.4 support
