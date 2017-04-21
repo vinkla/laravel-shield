@@ -6,7 +6,7 @@
 
 ```php
 // Use on your routes.
-Route::get('/', ['middleware' => 'shield', function () {
+Route::get('/', ['middleware' => 'shield'], function () {
     // Your protected page.
 }]);
 
@@ -62,7 +62,7 @@ The user credentials which are used when logging in with [HTTP basic authenticat
 To protect your routes with the shield you can add it to the routes file.
 
 ```php
-Route::get('/', ['middleware' => 'shield', function () {
+Route::get('/', ['middleware' => 'shield'], function () {
     // Your protected page.
 }]);
 ```
