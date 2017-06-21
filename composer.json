@@ -35,6 +35,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "2.1-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Vinkla\\Shield\\ShieldServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
