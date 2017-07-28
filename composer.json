@@ -16,7 +16,7 @@
         "symfony/http-kernel": "^3.3"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^3.3",
+        "graham-campbell/testbench": "^4.0",
         "phpunit/phpunit": "^6.2"
     },
     "autoload": {
