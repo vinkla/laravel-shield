@@ -51,15 +51,15 @@ class Shield
     /**
      * Verify the user input.
      *
-     * @param string $username
-     * @param string $password
+     * @param string|null $username
+     * @param string|null $password
      * @param string|null $user
      *
      * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      *
      * @return null
      */
-    public function verify(string $username, string $password, string $user = null)
+    public function verify(string $username = null, string $password = null, string $user = null)
     {
         $users = $this->getUsers($user);
 

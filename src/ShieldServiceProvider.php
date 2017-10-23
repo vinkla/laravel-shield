@@ -60,16 +60,6 @@ class ShieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerShield();
-    }
-
-    /**
-     * Register the shield class.
-     *
-     * @return void
-     */
-    protected function registerShield()
-    {
         $this->app->singleton('shield', function (Container $app) {
             $config = $app['config']['shield.users'];
 
