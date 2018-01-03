@@ -11,15 +11,14 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^7.1.3",
         "illuminate/support": "5.5.*",
-        "symfony/http-kernel": "^3.3"
+        "symfony/http-kernel": "^3.4 || ^4.0"
     },
     "require-dev": {
-        "graham-campbell/analyzer": "^1.1",
-        "graham-campbell/testbench": "^4.0",
-        "orchestra/testbench": "^3.5",
-        "phpunit/phpunit": "^6.3"
+        "graham-campbell/analyzer": "^2.0",
+        "graham-campbell/testbench": "^5.0",
+        "phpunit/phpunit": "^6.5"
     },
     "autoload": {
         "psr-4": {
@@ -36,7 +35,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "2.4-dev"
         },
         "laravel": {
             "providers": [
