@@ -42,7 +42,7 @@ class ShieldServiceProvider extends ServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/../config/shield.php');
+        $source = realpath($raw = __DIR__.'/../config/shield.php') ?: $raw;
 
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('shield.php')]);
