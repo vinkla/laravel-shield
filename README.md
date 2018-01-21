@@ -79,9 +79,9 @@ The middleware accepts one optional parameter to specify which user credentials 
 $this->middleware('shield:kitt');
 ```
 
-To add new user credentials, you probably want to use hashed passwords. Hashed password can be generated with [`htpasswd`](https://tldr.ostera.io/htpasswd) command line tool or [`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) PHP function.
+To add new user credentials, you probably want to use hashed passwords. Hashed password can be generated with the [`htpasswd`](https://tldr.ostera.io/htpasswd) command line tool, the [`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) PHP function or [this online generator](https://passwordhashing.com/BCrypt).
 
-Then copy and paste the credentials to the `.env` file separating the hashed username and password with a colon.
+Then copy and paste the hashed credentials to the `.env` environment file.
 
 ```bash
 SHIELD_USER=your-hashed-user
