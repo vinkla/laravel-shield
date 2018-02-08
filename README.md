@@ -64,7 +64,7 @@ To protect your routes with the shield you can add it to the routes file.
 ```php
 Route::get('/', ['middleware' => 'shield'], function () {
     // Your protected page.
-}]);
+});
 ```
 
 You can also add the shield middleware to your controllers constructor.
