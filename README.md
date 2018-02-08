@@ -8,7 +8,7 @@
 // Use on your routes.
 Route::get('/', ['middleware' => 'shield'], function () {
     // Your protected page.
-}]);
+});
 
 // Use it within your controller constructor.
 $this->middleware('shield');
