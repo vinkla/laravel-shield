@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.4.0 (released 2018-02-08)
+
+- Added laravel 5.6 support
+- Removed php 7.0 support
+- Removed laravel 5.5 support
+
 ## 2.3.0 (released 2017-09-02)
 
 - Removed laravel 5.3 and 5.4 support
