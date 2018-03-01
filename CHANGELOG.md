@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.4.1 (released 2018-03-01)
+
+- Added check for nullable variables
+
 ## 2.4.0 (released 2018-02-08)
 
 - Added laravel 5.6 support

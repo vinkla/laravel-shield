@@ -61,16 +61,18 @@ class Shield
      */
     public function verify(string $username = null, string $password = null, string $user = null)
     {
-        $users = $this->getUsers($user);
+        if ($username && $password) {
+            $users = $this->getUsers($user);
 
-        foreach ($users as $user => $credentials) {
-            if (
-                password_verify($username, reset($credentials)) &&
-                password_verify($password, end($credentials))
-            ) {
-                $this->currentUser = $user;
+            foreach ($users as $user => $credentials) {
+                if (
+                    password_verify($username, reset($credentials)) &&
+                    password_verify($password, end($credentials))
+                ) {
+                    $this->currentUser = $user;
 
-                return;
+                    return;
+                }
             }
         }
 
