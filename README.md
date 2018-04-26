@@ -32,12 +32,6 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require vinkla/shield
 ```
 
-Add the service provider to `config/app.php` in the `providers` array, or if you're using Laravel 5.5, this can be done via the automatic package discovery.
-
-```php
-Vinkla\Shield\ShieldServiceProvider::class
-```
-
 Add the middleware to the `$routeMiddleware` array in your `Kernel.php` file.
 
 ```php
