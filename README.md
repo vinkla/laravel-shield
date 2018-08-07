@@ -17,12 +17,11 @@ $this->middleware('shield');
 $this->middleware('shield:hasselhoff');
 ```
 
-[![Build Status](https://img.shields.io/travis/vinkla/laravel-shield/master.svg?style=flat)](https://travis-ci.org/vinkla/laravel-shield)
-[![StyleCI](https://styleci.io/repos/50459201/shield?style=flat)](https://styleci.io/repos/50459201)
-[![Coverage Status](https://img.shields.io/codecov/c/github/vinkla/laravel-shield.svg?style=flat)](https://codecov.io/github/vinkla/laravel-shield)
-[![Total Downloads](https://img.shields.io/packagist/dt/vinkla/shield.svg?style=flat)](https://packagist.org/packages/vinkla/shield)
-[![Latest Version](https://img.shields.io/github/release/vinkla/shield.svg?style=flat)](https://github.com/vinkla/shield/releases)
-[![License](https://img.shields.io/packagist/l/vinkla/shield.svg?style=flat)](https://packagist.org/packages/vinkla/shield)
+[![Build Status](https://badgen.net/travis/vinkla/laravel-shield/master)](https://travis-ci.org/vinkla/laravel-shield)
+[![Coverage Status](https://badgen.net/codecov/c/github/vinkla/laravel-shield)](https://codecov.io/github/vinkla/laravel-shield)
+[![Total Downloads](https://badgen.net/packagist/dt/vinkla/shield)](https://packagist.org/packages/vinkla/shield)
+[![Latest Version](https://badgen.net/github/release/vinkla/shield)](https://github.com/vinkla/shield/releases)
+[![License](https://badgen.net/packagist/license/vinkla/shield)](https://packagist.org/packages/vinkla/shield)
 
 ## Installation
 
