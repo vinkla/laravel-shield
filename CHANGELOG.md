@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.5.0 (released 2018-08-23)
+
+- Added laravel 5.7 support
+- Removed laravel 5.6 support
+
 ## 2.4.1 (released 2018-03-01)
 
 - Added check for nullable variables
