@@ -1,8 +1,15 @@
 {
     "name": "vinkla/shield",
     "description": "A HTTP basic auth middleware for Laravel",
+    "keywords": [
+        "laravel",
+        "http",
+        "basic",
+        "auth",
+        "middleware",
+        "shield"
+    ],
     "license": "MIT",
-    "keywords": ["laravel", "http", "basic", "auth", "middleware", "shield"],
     "authors": [
         {
             "name": "Vincent Klaiber",
@@ -20,16 +27,6 @@
         "graham-campbell/testbench": "^5.0",
         "phpunit/phpunit": "^7.0"
     },
-    "autoload": {
-        "psr-4": {
-            "Vinkla\\Shield\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Vinkla\\Tests\\Shield\\": "tests/"
-        }
-    },
     "config": {
         "preferred-install": "dist"
     },
@@ -41,6 +38,16 @@
             "providers": [
                 "Vinkla\\Shield\\ShieldServiceProvider"
             ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Vinkla\\Shield\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vinkla\\Tests\\Shield\\": "tests/"
         }
     },
     "minimum-stability": "dev",
