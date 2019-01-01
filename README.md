@@ -73,7 +73,7 @@ The middleware accepts one optional parameter to specify which user credentials 
 $this->middleware('shield:kitt');
 ```
 
-To add new user credentials, you probably want to use hashed passwords. Hashed password can be generated with the [`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) function:
+To add a new user, you probably want to use hashed credentials. Hashed credentials can be generated with the [`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) function:
 
 ```sh
 $ php -r "echo password_hash('my-secret-passphrase', PASSWORD_DEFAULT);"
