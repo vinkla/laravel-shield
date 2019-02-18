@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.6.0 (released 2019-02-18)
+
+- Added laravel 5.8 support
+- Removed laravel 5.7 support
+
 ## 2.5.0 (released 2018-08-23)
 
 - Added laravel 5.7 support
