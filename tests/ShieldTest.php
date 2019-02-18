@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Vinkla\Tests\Shield;
 
 use ReflectionClass;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Vinkla\Shield\Shield;
 
 /**
@@ -47,20 +48,18 @@ class ShieldTest extends AbstractTestCase
         $this->assertSame('alternative', $shield->getCurrentUser());
     }
 
-    /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
-     */
     public function testUnauthorizedException()
     {
+        $this->expectException(UnauthorizedHttpException::class);
+
         $shield = $this->getShield();
         $shield->verify('user3', 'password3');
     }
 
-    /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
-     */
     public function testUnauthorizedExceptionWithUser()
     {
+        $this->expectException(UnauthorizedHttpException::class);
+
         $shield = $this->getShield();
         $shield->verify('user1', 'password1', 'alternative');
     }

@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Vinkla\Tests\Shield;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Vinkla\Shield\Shield;
 use Vinkla\Shield\ShieldMiddleware;
 
@@ -44,11 +45,10 @@ class ShieldMiddlewareTest extends AbstractTestCase
         $this->assertNull($return);
     }
 
-    /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
-     */
     public function testInvalidShieldCredentialsException()
     {
+        $this->expectException(UnauthorizedHttpException::class);
+
         $request = $this->getRequest(['PHP_AUTH_USER' => 'user3', 'PHP_AUTH_PW' => 'password3']);
         $middleware = $this->getMiddleware();
         $middleware->handle($request, function () {
@@ -56,11 +56,10 @@ class ShieldMiddlewareTest extends AbstractTestCase
         });
     }
 
-    /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
-     */
     public function testInvalidShieldCredentialsExceptionWithUser()
     {
+        $this->expectException(UnauthorizedHttpException::class);
+
         $request = $this->getRequest(['PHP_AUTH_USER' => 'user1', 'PHP_AUTH_PW' => 'password1']);
         $middleware = $this->getMiddleware();
         $middleware->handle($request, function () {
