@@ -30,7 +30,7 @@ class ShieldServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->setupConfig();
     }
@@ -40,7 +40,7 @@ class ShieldServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function setupConfig()
+    protected function setupConfig(): void
     {
         $source = realpath($raw = __DIR__.'/../config/shield.php') ?: $raw;
 
@@ -58,7 +58,7 @@ class ShieldServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('shield', function (Container $app) {
             $config = $app['config']['shield.users'];
