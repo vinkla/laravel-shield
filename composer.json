@@ -23,6 +23,7 @@
         "symfony/http-kernel": "^4.3"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
         "graham-campbell/analyzer": "^2.3",
         "graham-campbell/testbench": "^5.3",
         "phpunit/phpunit": "^8.0"
