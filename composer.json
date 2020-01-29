@@ -13,8 +13,7 @@
     "authors": [
         {
             "name": "Vincent Klaiber",
-            "email": "hello@doubledip.se",
-            "homepage": "https://doubledip.se/"
+            "homepage": "doubledip.se"
         }
     ],
     "require": {
