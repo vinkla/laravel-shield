@@ -14,18 +14,18 @@
         {
             "name": "Vincent Klaiber",
             "email": "hello@doubledip.se",
-            "homepage": "https://doubledip.se"
+            "homepage": "https://doubledip.se/"
         }
     ],
     "require": {
-        "php": "^7.2",
-        "illuminate/support": "^6.0",
-        "symfony/http-kernel": "^4.3"
+        "php": "^7.4",
+        "illuminate/support": "^7.0",
+        "symfony/http-kernel": "^5.0"
     },
     "require-dev": {
-        "graham-campbell/analyzer": "^2.3",
-        "graham-campbell/testbench": "^5.3",
-        "phpunit/phpunit": "^8.0",
+        "graham-campbell/analyzer": "^2.4",
+        "graham-campbell/testbench": "^5.4",
+        "phpunit/phpunit": "^8.5",
         "squizlabs/php_codesniffer": "^3.5"
     },
     "config": {
@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0-dev"
+            "dev-master": "4.0-dev"
         },
         "laravel": {
             "providers": [

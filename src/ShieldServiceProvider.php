@@ -1,12 +1,12 @@
 <?php
 
-/*
- * This file is part of Laravel Shield.
- *
- * (c) Vincent Klaiber <hello@doubledip.se>
+/**
+ * Copyright (c) Vincent Klaiber.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @see https://github.com/vinkla/laravel-shield
  */
 
 declare(strict_types=1);
@@ -18,28 +18,13 @@ use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 
-/**
- * This is the shield service provider class.
- *
- * @author Vincent Klaiber <hello@doubledip.se>
- */
 class ShieldServiceProvider extends ServiceProvider
 {
-    /**
-     * Boot the service provider.
-     *
-     * @return void
-     */
     public function boot(): void
     {
         $this->setupConfig();
     }
 
-    /**
-     * Setup the config.
-     *
-     * @return void
-     */
     protected function setupConfig(): void
     {
         $source = realpath($raw = __DIR__ . '/../config/shield.php') ?: $raw;
@@ -53,11 +38,6 @@ class ShieldServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($source, 'shield');
     }
 
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
     public function register(): void
     {
         $this->app->singleton('shield', function (Container $app) {
@@ -70,8 +50,6 @@ class ShieldServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the services provided by the provider.
-     *
      * @return string[]
      */
     public function provides(): array

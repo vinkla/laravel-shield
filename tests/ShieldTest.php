@@ -1,12 +1,12 @@
 <?php
 
-/*
- * This file is part of Laravel Shield.
- *
- * (c) Vincent Klaiber <hello@doubledip.se>
+/**
+ * Copyright (c) Vincent Klaiber.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @see https://github.com/vinkla/laravel-shield
  */
 
 declare(strict_types=1);
@@ -17,11 +17,6 @@ use ReflectionClass;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Vinkla\Shield\Shield;
 
-/**
- * This is the shield test class.
- *
- * @author Vincent Klaiber <hello@doubledip.se>
- */
 class ShieldTest extends AbstractTestCase
 {
     public function testVerify()
