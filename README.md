@@ -17,11 +17,9 @@ $this->middleware('shield');
 $this->middleware('shield:hasselhoff');
 ```
 
-[![Build Status](https://badgen.net/travis/vinkla/laravel-shield/master)](https://travis-ci.org/vinkla/laravel-shield)
-[![Coverage Status](https://badgen.net/codecov/c/github/vinkla/laravel-shield)](https://codecov.io/github/vinkla/laravel-shield)
-[![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/shield)](https://packagist.org/packages/vinkla/shield)
-[![Latest Version](https://badgen.net/github/release/vinkla/shield)](https://github.com/vinkla/shield/releases)
-[![License](https://badgen.net/packagist/license/vinkla/shield)](https://packagist.org/packages/vinkla/shield)
+[![Build Status](https://badgen.net/github/status/vinkla/laravel-shield/master)](https://github.com/vinkla/laravel-shield/actions)
+[![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/laravel-shield)](https://packagist.org/packages/vinkla/laravel-shield/stats)
+[![Latest Version](https://badgen.net/github/release/vinkla/laravel-shield)](https://github.com/vinkla/laravel-shield/releases)
 
 ## Installation
 
