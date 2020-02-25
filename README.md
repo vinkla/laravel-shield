@@ -17,7 +17,7 @@ $this->middleware('shield');
 $this->middleware('shield:hasselhoff');
 ```
 
-[![Build Status](https://badgen.net/github/status/vinkla/laravel-shield/master)](https://github.com/vinkla/laravel-shield/actions)
+[![Build Status](https://badgen.net/github/checks/vinkla/laravel-shield?label=build&icon=github)](https://github.com/vinkla/laravel-shield/actions)
 [![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/shield)](https://packagist.org/packages/vinkla/laravel-shield/stats)
 [![Latest Version](https://badgen.net/github/release/vinkla/laravel-shield)](https://github.com/vinkla/laravel-shield/releases)
 
