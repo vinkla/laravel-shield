@@ -22,7 +22,7 @@
         "symfony/http-kernel": "^5.0"
     },
     "require-dev": {
-        "graham-campbell/analyzer": "^2.4",
+        "graham-campbell/analyzer": "^3.0",
         "graham-campbell/testbench": "^5.4",
         "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "^3.5"
