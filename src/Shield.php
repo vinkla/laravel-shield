@@ -30,7 +30,7 @@ class Shield
      * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      * @return null
      */
-    public function verify(string $username, string $password, ?string $user = null)
+    public function verify(?string $username, ?string $password, ?string $user = null)
     {
         if ($username && $password) {
             $users = $this->getUsers($user);
