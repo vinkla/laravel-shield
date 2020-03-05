@@ -26,28 +26,26 @@ class Shield
         $this->users = $users;
     }
 
-    /**
-     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
-     * @return null
-     */
-    public function verify(?string $username, ?string $password, ?string $user = null)
+    public function verify(?string $username, ?string $password, ?string $user = null): bool
     {
-        if ($username && $password) {
-            $users = $this->getUsers($user);
+        if ($username === null || $password === null) {
+            return false;
+        }
 
-            foreach ($users as $user => $credentials) {
-                if (
-                    password_verify($username, reset($credentials)) &&
-                    password_verify($password, end($credentials))
-                ) {
-                    $this->currentUser = $user;
+        $users = $this->getUsers($user);
 
-                    return;
-                }
+        foreach ($users as $user => $credentials) {
+            if (
+                password_verify($username, reset($credentials)) &&
+                password_verify($password, end($credentials))
+            ) {
+                $this->currentUser = $user;
+
+                return true;
             }
         }
 
-        throw new UnauthorizedHttpException('Basic');
+        return false;
     }
 
     protected function getUsers(string $user = null): array

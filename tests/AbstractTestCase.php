@@ -22,4 +22,12 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     {
         return ShieldServiceProvider::class;
     }
+
+    protected function getUsers()
+    {
+        return [
+            'default' => [Password::hash('user1'), Password::hash('password1')],
+            'hasselhoff' => [Password::hash('user2'), Password::hash('password2')],
+        ];
+    }
 }

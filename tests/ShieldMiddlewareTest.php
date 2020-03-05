@@ -20,9 +20,9 @@ use Vinkla\Shield\ShieldMiddleware;
 
 class ShieldMiddlewareTest extends AbstractTestCase
 {
-    public function testStandard()
+    public function testMiddleware()
     {
-        $request = $this->getRequest(['PHP_AUTH_USER' => 'user1', 'PHP_AUTH_PW' => 'password1']);
+        $request = $this->getRequest('user1', 'password1');
         $middleware = $this->getMiddleware();
         $return = $middleware->handle($request, function () {
             //
@@ -30,13 +30,13 @@ class ShieldMiddlewareTest extends AbstractTestCase
         $this->assertNull($return);
     }
 
-    public function testStandardWithUser()
+    public function testMiddlewareWithUser()
     {
-        $request = $this->getRequest(['PHP_AUTH_USER' => 'user2', 'PHP_AUTH_PW' => 'password2']);
+        $request = $this->getRequest('user2', 'password2');
         $middleware = $this->getMiddleware();
         $return = $middleware->handle($request, function () {
             //
-        }, 'alternative');
+        }, 'hasselhoff');
         $this->assertNull($return);
     }
 
@@ -44,7 +44,7 @@ class ShieldMiddlewareTest extends AbstractTestCase
     {
         $this->expectException(UnauthorizedHttpException::class);
 
-        $request = $this->getRequest(['PHP_AUTH_USER' => 'user3', 'PHP_AUTH_PW' => 'password3']);
+        $request = $this->getRequest('user3', 'password3');
         $middleware = $this->getMiddleware();
         $middleware->handle($request, function () {
             //
@@ -55,25 +55,20 @@ class ShieldMiddlewareTest extends AbstractTestCase
     {
         $this->expectException(UnauthorizedHttpException::class);
 
-        $request = $this->getRequest(['PHP_AUTH_USER' => 'user1', 'PHP_AUTH_PW' => 'password1']);
+        $request = $this->getRequest('user1', 'password1');
         $middleware = $this->getMiddleware();
         $middleware->handle($request, function () {
             //
-        }, 'alternative');
+        }, 'hasselhoff');
     }
 
-    public function getMiddleware()
+    protected function getMiddleware()
     {
-        $shield = new Shield([
-            'main' => [password_hash('user1', PASSWORD_BCRYPT), password_hash('password1', PASSWORD_BCRYPT)],
-            'alternative' => [password_hash('user2', PASSWORD_BCRYPT), password_hash('password2', PASSWORD_BCRYPT)],
-        ]);
-
-        return new ShieldMiddleware($shield);
+        return new ShieldMiddleware(new Shield($this->getUsers()));
     }
 
-    public function getRequest($server)
+    protected function getRequest($user, $password)
     {
-        return Request::create('http://localhost', 'GET', [], [], [], $server);
+        return Request::create('http://localhost', 'GET', [], [], [], ['PHP_AUTH_USER' => $user, 'PHP_AUTH_PW' => $password]);
     }
 }

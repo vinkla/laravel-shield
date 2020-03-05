@@ -18,13 +18,13 @@ return [
     | HTTP Basic Auth Credentials
     |--------------------------------------------------------------------------
     |
-    | The user credentials which are used when logging in with HTTP basic
-    | authentication.
+    | The array of users with hashed username and password credentials which are
+    | used when logging in with HTTP basic authentication.
     |
     */
 
     'users' => [
-        'main' => [
+        'default' => [
             env('SHIELD_USER'),
             env('SHIELD_PASSWORD'),
         ],
