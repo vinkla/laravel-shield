@@ -51,6 +51,14 @@ class ShieldTest extends AbstractTestCase
         $shield->verify('user3', 'password3');
     }
 
+    public function testUnauthorizedExceptionWithoutCredentials()
+    {
+        $this->expectException(UnauthorizedHttpException::class);
+
+        $shield = $this->getShield();
+        $shield->verify(null, null);
+    }
+
     public function testUnauthorizedExceptionWithUser()
     {
         $this->expectException(UnauthorizedHttpException::class);
