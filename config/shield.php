@@ -9,8 +9,6 @@
  * @see https://github.com/vinkla/laravel-shield
  */
 
-declare(strict_types=1);
-
 return [
 
     /*
