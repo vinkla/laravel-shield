@@ -19,7 +19,7 @@ $this->middleware('shield:hasselhoff');
 
 [![Build Status](https://badgen.net/github/checks/vinkla/laravel-shield?label=build&icon=github)](https://github.com/vinkla/laravel-shield/actions)
 [![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/shield)](https://packagist.org/packages/vinkla/shield/stats)
-[![Latest Version](https://badgen.net/github/release/vinkla/laravel-shield)](https://github.com/vinkla/laravel-shield/releases)
+[![Latest Version](https://badgen.net/packagist/v/vinkla/shield)](https://packagist.org/packages/vinkla/shield)
 
 ## Installation
 
