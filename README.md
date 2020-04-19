@@ -86,4 +86,4 @@ SHIELD_PASSWORD=your-hashed-password
 
 ## License
 
-[MIT](LICENSE) © [Vincent Klaiber](https://doubledip.se)
+[MIT](LICENSE) © [Vincent Klaiber](https://vinkla.dev/)
