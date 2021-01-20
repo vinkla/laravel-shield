@@ -83,7 +83,3 @@ Then copy and paste the hashed credentials to the `.env` environment file.
 SHIELD_USER=your-hashed-user
 SHIELD_PASSWORD=your-hashed-password
 ```
-
-## License
-
-[MIT](LICENSE) © [Vincent Klaiber](https://vinkla.dev/)
