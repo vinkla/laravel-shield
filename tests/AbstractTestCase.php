@@ -18,7 +18,7 @@ use Vinkla\Shield\ShieldServiceProvider;
 
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass()
     {
         return ShieldServiceProvider::class;
     }
