@@ -26,7 +26,7 @@ $this->middleware('shield:hasselhoff');
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ```bash
-$ composer require vinkla/shield
+composer require vinkla/shield
 ```
 
 Add the middleware to the `$routeMiddleware` array in your `Kernel.php` file.
