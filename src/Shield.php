@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace Vinkla\Shield;
 
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-
 class Shield
 {
     protected array $users;
