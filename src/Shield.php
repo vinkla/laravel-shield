@@ -15,16 +15,14 @@ namespace Vinkla\Shield;
 
 class Shield
 {
-    protected array $users;
-
     protected string $currentUser;
 
-    public function __construct(array $users = [])
-    {
-        $this->users = $users;
+    public function __construct(
+        protected array $users
+    ) {
     }
 
-    public function verify(?string $username, ?string $password, ?string $user = null): bool
+    public function verify(string|null $username, string|null $password, string|null $user = null): bool
     {
         if ($username === null || $password === null) {
             return false;

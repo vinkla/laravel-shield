@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Vinkla\Tests\Shield;
 
 use ReflectionClass;
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Vinkla\Shield\Shield;
 
 class ShieldTest extends AbstractTestCase

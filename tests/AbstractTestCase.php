@@ -26,8 +26,14 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     protected function getUsers()
     {
         return [
-            'default' => [Password::hash('user1'), Password::hash('password1')],
-            'hasselhoff' => [Password::hash('user2'), Password::hash('password2')],
+            'default' => [
+                password_hash('user1', PASSWORD_DEFAULT, ['cost' => 4]),
+                password_hash('password1', PASSWORD_DEFAULT, ['cost' => 4]),
+            ],
+            'hasselhoff' => [
+                password_hash('user2', PASSWORD_DEFAULT, ['cost' => 4]),
+                password_hash('password2', PASSWORD_DEFAULT, ['cost' => 4]),
+            ],
         ];
     }
 }

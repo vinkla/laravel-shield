@@ -18,11 +18,9 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 class ShieldMiddleware
 {
-    protected Shield $shield;
-
-    public function __construct(Shield $shield)
-    {
-        $this->shield = $shield;
+    public function __construct(
+        protected Shield $shield
+    ) {
     }
 
     /**
@@ -30,7 +28,7 @@ class ShieldMiddleware
      * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      * @return mixed
      */
-    public function handle($request, Closure $next, ?string $user = null)
+    public function handle($request, Closure $next, ?string $user = null): mixed
     {
         if ($this->shield->verify($request->getUser(), $request->getPassword(), $user) === false) {
             throw new UnauthorizedHttpException('Basic');
