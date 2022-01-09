@@ -49,9 +49,6 @@ class ShieldServiceProvider extends ServiceProvider
         $this->app->alias('shield', Shield::class);
     }
 
-    /**
-     * @return string[]
-     */
     public function provides(): array
     {
         return [
