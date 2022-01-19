@@ -13,14 +13,16 @@ declare(strict_types=1);
 
 namespace Vinkla\Tests\Shield;
 
-use GrahamCampbell\TestBench\AbstractPackageTestCase;
+use Orchestra\Testbench\TestCase;
 use Vinkla\Shield\ShieldServiceProvider;
 
-abstract class AbstractTestCase extends AbstractPackageTestCase
+abstract class AbstractTestCase extends TestCase
 {
-    protected function getServiceProviderClass()
+    protected function getPackageProviders($app)
     {
-        return ShieldServiceProvider::class;
+        return [
+            ShieldServiceProvider::class
+        ];
     }
 
     protected function getUsers()

@@ -18,12 +18,11 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^8.0",
-        "symfony/http-kernel": "^5.1"
+        "illuminate/support": "^9.0",
+        "symfony/http-kernel": "^6.0"
     },
     "require-dev": {
-        "graham-campbell/analyzer": "^3.0",
-        "graham-campbell/testbench": "^5.4",
+        "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.3",
         "squizlabs/php_codesniffer": "^3.5"
     },
