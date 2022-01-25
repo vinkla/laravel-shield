@@ -32,6 +32,7 @@ class Shield
 
         foreach ($users as $user => $credentials) {
             if (
+                // TODO: Remove deprecated reset and end functions.
                 password_verify($username, reset($credentials)) &&
                 password_verify($password, end($credentials))
             ) {
