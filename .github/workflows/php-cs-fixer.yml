@@ -6,7 +6,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
 
-    name: PSR-12
+    name: PER
 
     steps:
       - uses: actions/checkout@v3
