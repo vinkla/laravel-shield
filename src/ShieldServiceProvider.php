@@ -16,6 +16,7 @@ namespace Vinkla\Shield;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
+use InvalidArgumentException;
 use Laravel\Lumen\Application as LumenApplication;
 
 class ShieldServiceProvider extends ServiceProvider
@@ -41,9 +42,19 @@ class ShieldServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton('shield', function (Container $app) {
-            $config = $app['config']['shield.users'];
+            $users = $app['config']['shield.users'];
+            $type = $app['config']['shield.auth'] ?? 'password';
 
-            return new Shield($config);
+            if (!in_array($type, ['password', 'plain'])) {
+                throw new InvalidArgumentException("Invalid password auth type [$type].");
+            }
+
+            $auth = match ($type) {
+                'password' => new PasswordHash(),
+                'plain' => new PlainText(),
+            };
+
+            return new Shield($users, $auth);
         });
 
         $this->app->alias('shield', Shield::class);

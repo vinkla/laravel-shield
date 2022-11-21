@@ -18,7 +18,8 @@ class Shield
     protected string $currentUser;
 
     public function __construct(
-        protected array $users
+        protected array $users,
+        protected Auth $auth = new PasswordHash()
     ) {
     }
 
@@ -32,8 +33,8 @@ class Shield
 
         foreach ($users as $user => $credentials) {
             if (
-                password_verify($username, reset($credentials)) &&
-                password_verify($password, end($credentials))
+                $this->auth->verify($username, $credentials[0]) &&
+                $this->auth->verify($password, $credentials[1])
             ) {
                 $this->currentUser = $user;
 
