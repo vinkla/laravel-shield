@@ -25,7 +25,7 @@ $this->middleware('shield:hasselhoff');
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
-```bash
+```sh
 composer require vinkla/shield
 ```
 
@@ -39,7 +39,7 @@ Add the middleware to the `$routeMiddleware` array in your `Kernel.php` file.
 
 Laravel Shield requires configuration. To get started, you'll need to publish all vendor assets:
 
-```bash
+```sh
 $ php artisan vendor:publish
 ```
 
@@ -79,7 +79,15 @@ $ php -r "echo password_hash('my-secret-passphrase', PASSWORD_DEFAULT);"
 
 Then copy and paste the hashed credentials to the `.env` environment file.
 
-```bash
+```sh
 SHIELD_USER=your-hashed-user
 SHIELD_PASSWORD=your-hashed-password
+```
+
+## Plain Text
+
+If you want to use plain text instead of hashed credentials, you may use the plain text driver.
+
+```php
+'driver' => 'plain',
 ```

@@ -4,20 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Password Authenticator
-    |--------------------------------------------------------------------------
-    |
-    | If you want to verify credentials using the password_verify function or
-    | plain text.
-    |
-    | Supported: "password", "plain"
-    |
-    */
-
-    'auth' => 'password',
-
-    /*
-    |--------------------------------------------------------------------------
     | HTTP Basic Auth Credentials
     |--------------------------------------------------------------------------
     |
@@ -32,5 +18,19 @@ return [
             env('SHIELD_PASSWORD'),
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Password Driver
+    |--------------------------------------------------------------------------
+    |
+    | If you want to verify hashed credentials using the password_verify
+    | function or plain text.
+    |
+    | Supported: "hash", "plain"
+    |
+    */
+
+    'driver' => 'hash',
 
 ];

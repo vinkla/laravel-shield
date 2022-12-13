@@ -43,14 +43,14 @@ class ShieldServiceProvider extends ServiceProvider
     {
         $this->app->singleton('shield', function (Container $app) {
             $users = $app['config']['shield.users'];
-            $type = $app['config']['shield.auth'] ?? 'password';
+            $driver = $app['config']['shield.password'] ?? 'hash';
 
-            if (!in_array($type, ['password', 'plain'])) {
-                throw new InvalidArgumentException("Invalid password auth type [$type].");
+            if (!in_array($driver, ['password', 'plain'])) {
+                throw new InvalidArgumentException("Invalid password driver [$driver].");
             }
 
-            $auth = match ($type) {
-                'password' => new PasswordHash(),
+            $auth = match ($driver) {
+                'hash' => new PasswordHash(),
                 'plain' => new PlainText(),
             };
 
