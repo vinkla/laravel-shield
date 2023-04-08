@@ -74,7 +74,7 @@ $this->middleware('shield:kitt');
 To add a new user, you probably want to use hashed credentials. Hashed credentials can be generated with the [`password_hash()`](https://secure.php.net/manual/en/function.password-hash.php) function in the terminal:
 
 ```sh
-$ php -r "echo password_hash('my-secret-passphrase', PASSWORD_DEFAULT);"
+php -r "echo password_hash('my-secret-passphrase', PASSWORD_DEFAULT);"
 ```
 
 Then copy and paste the hashed credentials to the `.env` environment file.
