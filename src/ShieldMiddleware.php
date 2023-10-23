@@ -21,6 +21,7 @@ class ShieldMiddleware
     public function __construct(
         protected Shield $shield
     ) {
+        //
     }
 
     /**

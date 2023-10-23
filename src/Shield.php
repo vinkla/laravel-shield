@@ -20,6 +20,7 @@ class Shield
     public function __construct(
         protected array $users
     ) {
+        //
     }
 
     public function verify(string|null $username, string|null $password, string|null $user = null): bool
