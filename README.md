@@ -1,6 +1,8 @@
 # Laravel Shield
 
-This package used to be an HTTP basic auth middleware for Laravel. However, it is now deprecated as I no longer use it personally. Laravel already has built-in basic auth support for their web guard. If you need a simple basic auth for your API, instead of depending on a third-party library, you can add it yourself. Please follow the guide below.
+This package used to be an HTTP basic auth middleware for Laravel. However, it is now deprecated as I no longer use it personally. Laravel already has built-in basic auth support for their web guard. 
+
+If you need simpler basic auth for your API, instead of depending on a third-party library, you can add it yourself. Please follow the guide below.
 
 To begin, update your `.env` file with the following details:
 
