@@ -50,18 +50,12 @@ class BasicAuthMiddleware
 }
 ```
 
-Add the middleware to your `app/Http/Kernel.php` file:
-
-```php
-protected $routeMiddleware = [
-    'basic' => \App\Http\Middleware\BasicAuthMiddleware::class,
-];
-```
-
 That's it! You can now use the middleware in your routes.
 
 ```php
+use App\Http\Middleware\BasicAuthMiddleware;
+
 Route::get('api/users', function () {
     return User::all();
-})->middleware('basic');
+})->middleware(BasicAuthMiddleware::class);
 ```
