@@ -56,6 +56,7 @@ That's it! You can now use the middleware in your routes.
 
 ```php
 use App\Http\Middleware\BasicAuthMiddleware;
+use App\Models\User;
 
 Route::get('api/users', function () {
     return User::all();
